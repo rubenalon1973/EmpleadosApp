@@ -14,6 +14,9 @@
 		8034A6B62A2A4130009404C0 /* EmpleadosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6B52A2A4130009404C0 /* EmpleadosModel.swift */; };
 		8034A6B82A2A4324009404C0 /* EmpleadosPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6B72A2A4324009404C0 /* EmpleadosPersistence.swift */; };
 		8034A6BB2A2A4F25009404C0 /* EmpleadosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6BA2A2A4F25009404C0 /* EmpleadosViewModel.swift */; };
+		80749BAD2A2BA7410046B9D2 /* EmpleadosTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 80749BAC2A2BA7410046B9D2 /* EmpleadosTest.json */; };
+		80749BAF2A2BA9250046B9D2 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BAE2A2BA9250046B9D2 /* Interface.swift */; };
+		80749BB12A2BBFE50046B9D2 /* TestPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		8034A6B52A2A4130009404C0 /* EmpleadosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadosModel.swift; sourceTree = "<group>"; };
 		8034A6B72A2A4324009404C0 /* EmpleadosPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadosPersistence.swift; sourceTree = "<group>"; };
 		8034A6BA2A2A4F25009404C0 /* EmpleadosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadosViewModel.swift; sourceTree = "<group>"; };
+		80749BAC2A2BA7410046B9D2 /* EmpleadosTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmpleadosTest.json; sourceTree = "<group>"; };
+		80749BAE2A2BA9250046B9D2 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPersistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				8034A6A92A2A4047009404C0 /* Preview Assets.xcassets */,
+				80749BAC2A2BA7410046B9D2 /* EmpleadosTest.json */,
+				80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -88,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				8034A6B72A2A4324009404C0 /* EmpleadosPersistence.swift */,
+				80749BAE2A2BA9250046B9D2 /* Interface.swift */,
 			);
 			name = Persistence;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80749BAD2A2BA7410046B9D2 /* EmpleadosTest.json in Resources */,
 				8034A6AA2A2A4047009404C0 /* Preview Assets.xcassets in Resources */,
 				8034A6A72A2A4047009404C0 /* Assets.xcassets in Resources */,
 			);
@@ -194,11 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80749BB12A2BBFE50046B9D2 /* TestPersistence.swift in Sources */,
 				8034A6B82A2A4324009404C0 /* EmpleadosPersistence.swift in Sources */,
 				8034A6B62A2A4130009404C0 /* EmpleadosModel.swift in Sources */,
 				8034A6BB2A2A4F25009404C0 /* EmpleadosViewModel.swift in Sources */,
 				8034A6A52A2A4047009404C0 /* ContentView.swift in Sources */,
 				8034A6A32A2A4047009404C0 /* EmpleadosAppApp.swift in Sources */,
+				80749BAF2A2BA9250046B9D2 /* Interface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

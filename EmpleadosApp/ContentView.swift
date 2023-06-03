@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var empleadosVm = EmpleadosViewModel()
-    
+    @ObservedObject var empleadosVm: EmpleadosViewModel
     
     var body: some View {
         
@@ -18,9 +17,10 @@ struct ContentView: View {
         }
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(empleadosVm: .empleadosTest)
     }
 }
 

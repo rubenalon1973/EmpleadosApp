@@ -1,0 +1,128 @@
+[
+{
+  "username": "jballintyneh",
+  "address": "993 8th Park",
+  "department": {
+    "id": 10,
+    "name": "Services"
+  },
+  "gender": {
+    "gender": "Male",
+    "id": 1
+  },
+  "zipcode": "4980-559",
+  "firstName": "Justus",
+  "id": 18,
+  "lastName": "Ballintyne",
+  "email": "jballintyneh@hubpages.com",
+  "avatar": "https://robohash.org/aperiamsinteum.png"
+},
+{
+  "username": "efilshini",
+  "email": "efilshini@163.com",
+  "avatar": "https://robohash.org/optionobisreprehenderit.png",
+  "firstName": "Emeline",
+  "department": {
+    "id": 8,
+    "name": "Research and Development"
+  },
+  "zipcode": "05-831",
+  "gender": {
+    "id": 2,
+    "gender": "Female"
+  },
+  "id": 19,
+  "lastName": "Filshin",
+  "address": "9910 Loeprich Avenue"
+},
+{
+  "email": "ndohertyj@mysql.com",
+  "username": "ndohertyj",
+  "avatar": "https://robohash.org/enimsolutaperferendis.png",
+  "address": "17 Old Gate Lane",
+  "lastName": "Doherty",
+  "zipcode": "7745",
+  "department": {
+    "id": 5,
+    "name": "Legal"
+  },
+  "firstName": "Nollie",
+  "gender": {
+    "gender": "Female",
+    "id": 2
+  },
+  "id": 20
+},
+{
+  "username": "nsymmonsl",
+  "address": "39 Gale Place",
+  "gender": {
+    "gender": "Male",
+    "id": 1
+  },
+  "firstName": "Northrop",
+  "lastName": "Symmons",
+  "id": 22,
+  "email": "nsymmonsl@amazon.co.uk",
+  "avatar": "https://robohash.org/voluptatemvoluptatemnon.png",
+  "department": {
+    "id": 2,
+    "name": "Business Development"
+  },
+  "zipcode": ""
+},
+{
+  "lastName": "Cochet",
+  "email": "ncochetn@typepad.com",
+  "department": {
+    "id": 7,
+    "name": "Product Management"
+  },
+  "address": "53841 Elka Alley",
+  "zipcode": "38030 CEDEX 2",
+  "gender": {
+    "gender": "Male",
+    "id": 1
+  },
+  "avatar": "https://robohash.org/doloresteneturvero.png",
+  "username": "ncochetn",
+  "id": 24,
+  "firstName": "Nowell"
+},
+{
+  "username": "ckighlyo",
+  "address": "97 Transport Crossing",
+  "department": {
+    "id": 12,
+    "name": "Training"
+  },
+  "gender": {
+    "gender": "Male",
+    "id": 1
+  },
+  "zipcode": "33060 CEDEX",
+  "firstName": "Costa",
+  "id": 25,
+  "lastName": "Kighly",
+  "email": "ckighlyo@ask.com",
+  "avatar": "https://robohash.org/autconsequaturofficia.png"
+},
+{
+  "lastName": "Delue",
+  "email": "rdeluep@dell.com",
+  "department": {
+    "id": 8,
+    "name": "Research and Development"
+  },
+  "address": "814 Sunnyside Street",
+  "zipcode": "",
+  "gender": {
+    "gender": "Male",
+    "id": 1
+  },
+  "avatar": "https://robohash.org/facereblanditiisquam.png",
+  "username": "rdeluep",
+  "id": 26,
+  "firstName": "Raddie"
+}
+]

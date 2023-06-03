@@ -13,21 +13,24 @@ enum NetworkErrors: String, Error {
     case failedToParseData = "Fallo en decode de datos"
 }
 
-final class EmpleadosPersistence {
+protocol NetworkPersistence {
+    
+    func fetchEmpleados() async throws -> [EmpleadosModel] //en los protoc. solo van declaraciones
+    
+}
+
+final class EmpleadosPersistence: NetworkPersistence {
     static let shared = EmpleadosPersistence()
-    
-    let url = URL(string: "https://acacademy-employees-api.herokuapp.com/api/getEmpleados")
-    
+        
     private init() {}
     
     func fetchEmpleados() async throws -> [EmpleadosModel] {
-        
-        guard let url = url else { throw NetworkErrors.notFound }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
+
+//        let (data, response) = try await URLSession.shared.data(from: .getEmpleados)
+        let (data, response) = try await URLSession.shared.data(for: .get(url: .getEmpleados))
 
         guard let httpResponse = response as? HTTPURLResponse else { throw NetworkErrors.badResponse }
-        
+
         switch httpResponse.statusCode {
         case 200...299:
             return try JSONDecoder().decode([EmpleadosModel].self, from: data)

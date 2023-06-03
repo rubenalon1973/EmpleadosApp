@@ -8,28 +8,27 @@
 import Foundation
 
 final class EmpleadosViewModel: ObservableObject {
-    let persistence = EmpleadosPersistence.shared
+    let persistence: NetworkPersistence
     
     @Published var empleados: [EmpleadosModel] = []
     
-    init() {
+//    para poder elegir el persistence q queramos, por defecto el de producción
+    init(persistence: NetworkPersistence = EmpleadosPersistence.shared) {
+        self.persistence = persistence
         Task {
-            let loadedEmpleados = await loadEmpleados()
-            DispatchQueue.main.async {
-                self.empleados = loadedEmpleados
-            }
+            await loadEmpleados()
         }
     }
     
-    private func loadEmpleados() async -> [EmpleadosModel] {
+    //para mover al hilo principal, acordarse cdo hagamos llamadas a red
+    @MainActor
+    private func loadEmpleados() async {
         do {
-            return try await persistence.fetchEmpleados()
+            empleados = try await persistence.fetchEmpleados()
         } catch let error as NetworkErrors {
             print(error.rawValue)
         } catch {
             print(error)
         }
-        
-        return []
     }
 }
