@@ -7,20 +7,20 @@
 
 import Foundation
 
-//tendremos los métodos de red
+//capa de configuración de llamadas de red, hay gente q lo mete todo en una clase lo de esta interface..reunido
 
-let mainURL = URL(string: "https://acacademy-employees-api.herokuapp.com/api")!
 //MARK: a comentar baseURL
+let mainURL = URL(string: "https://acacademy-employees-api.herokuapp.com/api")! //url base
 
 enum HTTPMethods: String {
     case get = "GET"
     case post = "POST"
 }
-
+//añadir nuestras url dentro del sist. para llamarlas más fácil
 extension URL {
     static let getEmpleados = mainURL.appending(path: "getEmpleados")
 }
-
+//request: es una solicitud de más detalles, URL es una simple llamada
 extension URLRequest {
     
     static func get(url: URL) -> URLRequest {

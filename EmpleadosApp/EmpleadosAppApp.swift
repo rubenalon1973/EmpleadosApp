@@ -12,7 +12,7 @@ struct EmpleadosAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(empleadosVm: EmpleadosViewModel())
+            ContentView(empleadosVm: EmpleadosViewModel()) //por defecto coge el de producción
         }
     }
 }
