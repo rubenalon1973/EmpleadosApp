@@ -7,9 +7,7 @@
 
 import Foundation
 
-//capa de configuración de llamadas de red, hay gente q lo mete todo en una clase lo de esta interface..reunido
-
-//MARK: a comentar baseURL
+//capa de configuración de llamadas de red, hay gente q lo mete todo en una clase lo de esta interface...reunido
 let mainURL = URL(string: "https://acacademy-employees-api.herokuapp.com/api")! //url base
 
 enum HTTPMethods: String {

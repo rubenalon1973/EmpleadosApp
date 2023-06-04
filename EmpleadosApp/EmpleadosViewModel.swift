@@ -15,7 +15,7 @@ final class EmpleadosViewModel: ObservableObject {
     @Published var showError = false
     @Published var search = ""
     
-    var filteredEmopleadosModel: [EmpleadosModel] {
+    var filteredEmpleadosModel: [EmpleadosModel] {
         empleados.filter { empleado in
             searchFilter(empleado: empleado)
         }
@@ -23,7 +23,7 @@ final class EmpleadosViewModel: ObservableObject {
     
 //    MARK: INYECCION DE DEPENDENCIAS
 //    para poder elegir el persistence q queramos, por defecto el de producción, pero te da opción de llamar al que quieras(el de test)
-    init(persistence: NetworkPersistence = EmpleadosPersistence.shared) {
+    init(persistence: NetworkPersistence = PersistenceEmp.shared) {
         self.persistence = persistence
         Task {
             await loadEmpleados()
@@ -45,7 +45,7 @@ final class EmpleadosViewModel: ObservableObject {
             print(error)
         }
     }
-    func searchFilter(empleado: EmpleadosModel) -> Bool {
+    private func searchFilter(empleado: EmpleadosModel) -> Bool {
         search.isEmpty || empleado.firstName.lowercased().contains(search.lowercased())
     }
 }

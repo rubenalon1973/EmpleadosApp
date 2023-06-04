@@ -18,24 +18,24 @@ protocol NetworkPersistence {
     func fetchEmpleados() async throws -> [EmpleadosModel] //en los protoc. solo van declaraciones
 }
 
-final class EmpleadosPersistence: NetworkPersistence {
-    static let shared = EmpleadosPersistence()
-        
+final class PersistenceEmp: NetworkPersistence {
+    static let shared = PersistenceEmp()
+    
     private init() {}
     
     func fetchEmpleados() async throws -> [EmpleadosModel] {
-
-//        let (data, response) = try await URLSession.shared.data(from: .getEmpleados)
-//        propiedad tupla que se le asigna otra tupla, y funcionan correlativos
+        
+        //        let (data, response) = try await URLSession.shared.data(from: .getEmpleados)
+        //        propiedad tupla que se le asigna otra tupla, y funcionan correlativos
         let (data, response) = try await URLSession.shared.data(for: .get(url: .getEmpleados))
-
+        
         guard let httpResponse = response as? HTTPURLResponse else { throw NetworkErrors.badResponse }
-
+        
         switch httpResponse.statusCode {
         case 200...299:
             do {
                 return try JSONDecoder().decode([EmpleadosModel].self, from: data)
-
+                
             } catch {
                 throw NetworkErrors.failedToParseData
             }
