@@ -14,6 +14,7 @@ final class EmpleadosViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var showError = false
     @Published var search = ""
+    @Published var department: [Departamento] = []
     
     var filteredEmpleadosModel: [EmpleadosModel] {
         empleados.filter { empleado in

@@ -18,6 +18,7 @@
 		80749BAF2A2BA9250046B9D2 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BAE2A2BA9250046B9D2 /* Interface.swift */; };
 		80749BB12A2BBFE50046B9D2 /* TestPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */; };
 		80749BB72A2D0BF50046B9D2 /* AddEmpleadoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BB62A2D0BF50046B9D2 /* AddEmpleadoView.swift */; };
+		809D0B0F2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809D0B0E2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		80749BAE2A2BA9250046B9D2 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPersistence.swift; sourceTree = "<group>"; };
 		80749BB62A2D0BF50046B9D2 /* AddEmpleadoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmpleadoView.swift; sourceTree = "<group>"; };
+		809D0B0E2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaEmpleadoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +67,10 @@
 		8034A6A12A2A4047009404C0 /* EmpleadosApp */ = {
 			isa = PBXGroup;
 			children = (
+				8034A6B02A2A4079009404C0 /* Model */,
 				8034A6B92A2A4EE6009404C0 /* ViewModel */,
 				8034A6B32A2A40AA009404C0 /* Views */,
 				8034A6B12A2A4086009404C0 /* Persistence */,
-				8034A6B02A2A4079009404C0 /* Model */,
 				8034A6B42A2A40CD009404C0 /* Resources */,
 				8034A6B22A2A4094009404C0 /* System */,
 				8034A6A82A2A4047009404C0 /* Preview Content */,
@@ -116,6 +118,7 @@
 			children = (
 				8034A6A42A2A4047009404C0 /* ContentView.swift */,
 				80749BB62A2D0BF50046B9D2 /* AddEmpleadoView.swift */,
+				809D0B0E2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80749BB12A2BBFE50046B9D2 /* TestPersistence.swift in Sources */,
+				809D0B0F2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift in Sources */,
 				8034A6B82A2A4324009404C0 /* PersistenceEmp.swift in Sources */,
 				8034A6B62A2A4130009404C0 /* EmpleadosModel.swift in Sources */,
 				8034A6BB2A2A4F25009404C0 /* EmpleadosViewModel.swift in Sources */,

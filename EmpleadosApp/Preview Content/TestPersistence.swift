@@ -14,7 +14,6 @@ extension URL {
     static let empleadosTest = Bundle.main.url(forResource: "EmpleadosTest", withExtension: "json")!
 }
 
-
 final class TestPersistence: NetworkPersistence {
     
     func fetchEmpleados() async throws -> [EmpleadosModel] {
@@ -25,4 +24,8 @@ final class TestPersistence: NetworkPersistence {
 
 extension EmpleadosViewModel {
     static let empleadosTest = EmpleadosViewModel(persistence: TestPersistence())
+}
+
+extension EmpleadosModel {
+    static let testEmpleado = EmpleadosModel(id: 5, firstName: "David", username: "ndohertyj", lastName: "Doherty", avatar: URL(string: "https://robohash.org/enimsolutaperferendis.png")!, email: "ndohertyj@mysql.com", department: Departamento(id: 5, name: .engineering), gender: Genero(id: 2, gender: .female))
 }
