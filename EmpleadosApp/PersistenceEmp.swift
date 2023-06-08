@@ -15,7 +15,7 @@ enum NetworkErrors: String, Error {
 }
 //creamos protoc. para poder elegir de donde cargamos el json
 protocol NetworkPersistence {
-    func fetchEmpleados() async throws -> [EmpleadosModel] //en los protoc. solo van declaraciones
+    func fetchEmpleados() async throws -> [EmpModel] //en los protoc. solo van declaraciones
 }
 
 final class PersistenceEmp: NetworkPersistence {
@@ -23,18 +23,18 @@ final class PersistenceEmp: NetworkPersistence {
     
     private init() {}
     
-    func fetchEmpleados() async throws -> [EmpleadosModel] {
+    func fetchEmpleados() async throws -> [EmpModel] {
         
-        //        let (data, response) = try await URLSession.shared.data(from: .getEmpleados)
+        //        let (data, response) = try await URLSession.shared.data(from: .getEmpleados) //urlsseion
         //        propiedad tupla que se le asigna otra tupla, y funcionan correlativos
-        let (data, response) = try await URLSession.shared.data(for: .get(url: .getEmpleados))
+        let (data, response) = try await URLSession.shared.data(for: .get(url: .getEmpleados)) //con urlreques
         
         guard let httpResponse = response as? HTTPURLResponse else { throw NetworkErrors.badResponse }
         
         switch httpResponse.statusCode {
         case 200...299:
             do {
-                return try JSONDecoder().decode([EmpleadosModel].self, from: data)
+                return try JSONDecoder().decode([EmpModel].self, from: data)
                 
             } catch {
                 throw NetworkErrors.failedToParseData
@@ -47,4 +47,7 @@ final class PersistenceEmp: NetworkPersistence {
             throw NetworkErrors.unknow
         }
     }
+//    func postEmployee(empleado: EmpModel) async {
+//        let (_, response) = try! await URLSession.shared.data(for: .post(url: .postEmployee, data: EmpModel))
+//    }
 }

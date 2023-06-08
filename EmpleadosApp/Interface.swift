@@ -20,7 +20,7 @@ extension URL {
 }
 //request: es una solicitud de más detalles, URL es una simple llamada
 extension URLRequest {
-    
+//    func para el get
     static func get(url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.get.rawValue //accedes al enum para decirle el tipo, y así evitar los strings
@@ -28,4 +28,15 @@ extension URLRequest {
         request.setValue("application/json", forHTTPHeaderField: "Accept") //para q solo aceptemos json del servidor
         return request
     }
+    
+//    static func post<JSON: Codable>(url: URL, data: JSON) -> URLRequest {
+//        var request = URLRequest(url: url)
+//
+//        request.httpMethod = HTTPMethods.post.rawValue
+//        request.timeoutInterval = 30
+//        request.setValue("application/json; chartset=utf8", forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//        request.httpBody = try? JSONDecoder().encode(data)
+//        return request
+//    }
 }

@@ -16,16 +16,16 @@ extension URL {
 
 final class TestPersistence: NetworkPersistence {
     
-    func fetchEmpleados() async throws -> [EmpleadosModel] {
+    func fetchEmpleados() async throws -> [EmpModel] {
         let data = try Data(contentsOf: .empleadosTest) //decodifica a bytes en data
-        return try JSONDecoder().decode([EmpleadosModel].self, from: data) // va rellenando de data
+        return try JSONDecoder().decode([EmpModel].self, from: data) // va rellenando de data
     }
 }
 
-extension EmpleadosViewModel {
-    static let empleadosTest = EmpleadosViewModel(persistence: TestPersistence())
+extension EmpVM {
+    static let empleadosTest = EmpVM(persistence: TestPersistence())
 }
 
-extension EmpleadosModel {
-    static let testEmpleado = EmpleadosModel(id: 5, firstName: "David", username: "ndohertyj", lastName: "Doherty", avatar: URL(string: "https://robohash.org/enimsolutaperferendis.png")!, email: "ndohertyj@mysql.com", department: Departamento(id: 5, name: .engineering), gender: Genero(id: 2, gender: .female))
+extension EmpModel {
+    static let testEmpleado = EmpModel(id: 5, firstName: "David", username: "ndohertyj", lastName: "Doherty", avatar: URL(string: "https://robohash.org/enimsolutaperferendis.png")!, email: "ndohertyj@mysql.com", department: Departamento(id: 5, name: .engineering), gender: Genero(id: 2, gender: .female))
 }

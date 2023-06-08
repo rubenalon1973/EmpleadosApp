@@ -12,7 +12,7 @@ struct EmpleadosAppApp: App {
 //    la view principal al arrancar la app
     var body: some Scene {
         WindowGroup {
-            ContentView(empleadosVm: EmpleadosViewModel()) //por defecto coge el de producción
+            ContentView(empleadosVm: EmpVM()) //por defecto coge el de producción
                 .preferredColorScheme(.dark)
         }
     }

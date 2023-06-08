@@ -7,16 +7,16 @@
 
 import Foundation
 
-final class EmpleadosViewModel: ObservableObject {
+final class EmpVM: ObservableObject {
     let persistence: NetworkPersistence //para poder elegir de donde coger los datos
     
-    @Published var empleados: [EmpleadosModel] = [] // publisher envía info x tubería a la view cada vez q empleados cambia, gracias al obsevedObject
+    @Published var empleados: [EmpModel] = [] // publisher envía info x tubería a la view cada vez q empleados cambia, gracias al obsevedObject
     @Published var errorMessage = ""
     @Published var showError = false
     @Published var search = ""
     @Published var department: [Departamento] = []
     
-    var filteredEmpleadosModel: [EmpleadosModel] {
+    var filteredEmpleadosModel: [EmpModel] {
         empleados.filter { empleado in
             searchFilter(empleado: empleado)
         }
@@ -31,7 +31,7 @@ final class EmpleadosViewModel: ObservableObject {
         }
     }
     
-    //para mover al hilo principal, acordarse cdo hagamos llamadas a red con Async-await (actor), con URLSession
+    //para mover al hilo principal, acordarse cdo hagamos llamadas a red con Async-await (actor)
     @MainActor
     private func loadEmpleados() async { //sino la vamos a utilizar más, la ponemos private(o en un proyecto común para q sólo se utilice en esta class
         do {
@@ -46,7 +46,7 @@ final class EmpleadosViewModel: ObservableObject {
             print(error)
         }
     }
-    private func searchFilter(empleado: EmpleadosModel) -> Bool {
+    private func searchFilter(empleado: EmpModel) -> Bool {
         search.isEmpty || empleado.firstName.lowercased().contains(search.lowercased())
     }
 }

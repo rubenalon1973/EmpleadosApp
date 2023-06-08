@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct EmpleadosModel: Codable, Identifiable {
+struct EmpModel: Codable, Identifiable {
     let id: Int
     let firstName: String
     let username: String
@@ -49,7 +49,8 @@ struct Genero: Codable, Identifiable {
     let gender: NombreGenero
 }
 
-enum NombreGenero: String, Codable {
+enum NombreGenero: String, Codable, CaseIterable, Identifiable {
+    var id: String{ UUID().uuidString }
     case female = "Female"
     case male = "Male"
 }
