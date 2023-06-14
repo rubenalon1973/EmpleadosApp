@@ -11,7 +11,7 @@ import Foundation
 
 //Uniform resource locator URL, no se hace llamada a red, sino en local, creado por nosotros
 extension URL {
-    static let empleadosTest = Bundle.main.url(forResource: "EmpleadosTest", withExtension: "json")!
+    static let empleadosTest = Bundle.main.url(forResource: "EmployeeTest", withExtension: "json")!
 }
 
 final class TestPersistence: NetworkPersistence {
@@ -27,5 +27,5 @@ extension EmpVM {
 }
 
 extension EmpModel {
-    static let testEmpleado = EmpModel(id: 5, firstName: "David", username: "ndohertyj", lastName: "Doherty", avatar: URL(string: "https://robohash.org/enimsolutaperferendis.png")!, email: "ndohertyj@mysql.com", address: "97 Transport Crossing", department: Departamento(id: 5, name: .engineering), gender: Genero(id: 2, gender: .female))
+    static let testEmpleado = EmpModel(id: 5, firstName: "David", username: "ndohertyj", lastName: "Doherty", avatar: URL(string: "https://robohash.org/enimsolutaperferendis.png")!, email: "ndohertyj@mysql.com", address: "97 Transport Crossing", department: Department(id: 5, name: .engineering), gender: Gender(id: 2, gender: .female))
 }

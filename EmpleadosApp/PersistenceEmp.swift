@@ -60,7 +60,7 @@ final class PersistenceEmp: NetworkPersistence {
         }
     }
 //    fx para bajar de la API los departamentos ?????????????????????
-    func getDepartment() async throws -> [Departamento] {
+    func getDepartment() async throws -> [Department] {
         let (data, response) = try await URLSession.shared.data(for: .get(url: .getDepartamentos))
         
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -69,7 +69,7 @@ final class PersistenceEmp: NetworkPersistence {
         switch httpResponse.statusCode {
         case 200...299:
             do {
-                return try JSONDecoder().decode([Departamento].self, from: data)
+                return try JSONDecoder().decode([Department].self, from: data)
             } catch {
                 throw NetworkErrors.failedToParseData
             }

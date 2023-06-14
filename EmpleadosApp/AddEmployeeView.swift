@@ -7,7 +7,7 @@
 
 import SwiftUI
 //vista para q el usuario rellene los campos con sus datos y el su vm actualice esta propia view
-struct AddEmpleadoView: View {
+struct AddEmployeeView: View {
     @ObservedObject var vm = AddEmployeeVM()//puente a esta view
     @FocusState var focusField: AddEmployeeFields? //enum VM para mover el foco
     
@@ -46,7 +46,7 @@ struct AddEmpleadoView: View {
                     Text("LastName")
                         .font( .headline)
                     TextField("Enter lastName", text: $vm.lastName)
-                        .textContentType( .username)
+                        .textContentType( .name)
                         .textInputAutocapitalization( .words)
                         .focused($focusField, equals: .lastName)
                         .submitLabel( .next)
@@ -59,7 +59,7 @@ struct AddEmpleadoView: View {
                     Text("Email")
                         .font( .headline)
                     TextField("Enter email", text: $vm.email)
-                        .textContentType( .username)
+                        .textContentType( .emailAddress)
                         .textInputAutocapitalization( .never)
                         .keyboardType( .emailAddress)//teclado con temas de email
                         .focused($focusField, equals: .email)
@@ -73,9 +73,9 @@ struct AddEmpleadoView: View {
                     Text("Address")
                         .font( .headline)
                     TextField("Enter address", text: $vm.address)
-                        .textContentType( .username)
+                        .textContentType( .addressCityAndState)
                         .textInputAutocapitalization( .never)
-                        .keyboardType( .emailAddress)//teclado con temas de email
+                        .keyboardType( .numbersAndPunctuation)//teclado con temas de email
                         .focused($focusField, equals: .address)
                         .submitLabel( .next)
                         .onSubmit {
@@ -87,7 +87,7 @@ struct AddEmpleadoView: View {
                     Text("Zipcode")
                         .font( .headline)
                     TextField("Enter zipcode", text: $vm.zipcode)
-                        .textContentType( .username)
+                        .textContentType( .postalCode)
                         .textInputAutocapitalization( .never)
                         .keyboardType( .numberPad)//teclado con temas de zipcode
                         .focused($focusField, equals: .zipcode)
@@ -98,11 +98,11 @@ struct AddEmpleadoView: View {
                 }
                 //MARK: Opciones a revisar en documentación
                 //                DisclosureGroup // para crear celdas q tengan contenido dentro
-                //                LabeledContent("Gender") { //Si trabajamos con pickers fuera de formularios, sino no coge el label,hay q utilizar este.
+                //                LabeledContent("Gender") { //Si trabajamos con pickers fuera de formularios, si no no coge el label,hay q utilizar este.
                 //                }
                 //Creamos pickers para desplegar opciones, para recorrer colecciones
                 Picker(selection: $vm.gender) {//picker hashable, como un string
-                    ForEach(NombreGenero.allCases) { gender in
+                    ForEach(GenderName.allCases) { gender in
                         Text(gender.rawValue)
                             .tag(gender)
                     }
@@ -111,7 +111,7 @@ struct AddEmpleadoView: View {
                 }
                 
                 Picker(selection: $vm.department) {
-                    ForEach(NombreDepartamento.allCases) { department in
+                    ForEach(DepartmentName.allCases) { department in
                         Text(department.rawValue)//también podemos poner una image, o un label con systemImage xej
                             .tag(department)
                     }
@@ -135,10 +135,10 @@ struct AddEmpleadoView: View {
     }
 }
 
-struct AddEmpleadoView_Previews: PreviewProvider {
+struct AddEmployeeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            AddEmpleadoView()
+            AddEmployeeView()
                 .preferredColorScheme(.dark)
         }
     }

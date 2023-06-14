@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CeldaEmpleadoView: View {
+struct CellEmployeeView: View {
     let empleado: EmpModel
     
     var body: some View {
@@ -39,9 +39,9 @@ struct CeldaEmpleadoView: View {
 
 
 
-struct CeldaEmpleadoView_Previews: PreviewProvider {
+struct CellEmployeeView_Previews: PreviewProvider {
     static var previews: some View {
-        CeldaEmpleadoView(empleado: .testEmpleado)
+        CellEmployeeView(empleado: .testEmpleado)
             .padding() //para separarlo de la izq, en producción el list se encarga de ello
             .preferredColorScheme(.dark)
         

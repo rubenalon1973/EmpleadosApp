@@ -20,11 +20,11 @@ enum AddEmployeeFields {
         case .userName:
             self = .email
         case .email:
-            self = .firstName
-        case .address:
             self = .address
-        case .zipcode:
+        case .address:
             self = .zipcode
+        case .zipcode:
+            self = .firstName
         }
     }
     //    func para tabular en los campos del enum en un orden inverso
@@ -39,9 +39,9 @@ enum AddEmployeeFields {
         case .email:
             self = .userName
         case .address:
-            self = .address
+            self = .email
         case .zipcode:
-            self = .zipcode
+            self = .address
         }
     }
 }
@@ -55,8 +55,8 @@ final class AddEmployeeVM: ObservableObject {
     @Published var email = ""
     @Published var address = ""
     @Published var zipcode = ""
-    @Published var gender: NombreGenero = .female
-    @Published var department: NombreDepartamento = .accounting
+    @Published var gender: GenderName = .female
+    @Published var department: DepartmentName = .accounting
     
 //    fx para pasarle los datos (q se rellenan en la view de AddEmpleado por el usuario), a la persistance donde esta la fx post para hacer el decode a la API
     func postEmployee() { 

@@ -8,11 +8,11 @@
 import SwiftUI
 
 @main
-struct EmpleadosAppApp: App {
+struct EmployeeApp: App {
 //    la view principal al arrancar la app
     var body: some Scene {
         WindowGroup {
-            ContentView(empleadosVm: EmpVM()) //por defecto coge el de producción
+            listViewEmployee(employeeVm: EmpVM()) //por defecto coge el de producción
                 .preferredColorScheme(.dark)
         }
     }

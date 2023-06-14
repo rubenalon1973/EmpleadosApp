@@ -16,8 +16,8 @@ struct EmpModel: Codable, Identifiable {
     let avatar: URL
     let email: String
     let address: String
-    let department: Departamento
-    let gender: Genero
+    let department: Department
+    let gender: Gender
     
     var fullName: String {
         "\(lastName), \(firstName)"
@@ -36,12 +36,12 @@ struct NewEmployee: Codable {
     let department: Int
     let gender: Int
 }
-struct Departamento: Codable, Identifiable {
+struct Department: Codable, Identifiable {
     let id: Int
-    let name: NombreDepartamento
+    let name: DepartmentName
 }
 
-enum NombreDepartamento: String, Codable, CaseIterable, Identifiable {
+enum DepartmentName: String, Codable, CaseIterable, Identifiable {
     var id: String{ UUID().uuidString }
     case accounting = "Accounting"
     case businessDevelopment = "Business Development"
@@ -57,12 +57,12 @@ enum NombreDepartamento: String, Codable, CaseIterable, Identifiable {
     case training = "Training"
 }
 
-struct Genero: Codable, Identifiable {
+struct Gender: Codable, Identifiable {
     let id: Int
-    let gender: NombreGenero
+    let gender: GenderName
 }
 
-enum NombreGenero: String, Codable, CaseIterable, Identifiable {
+enum GenderName: String, Codable, CaseIterable, Identifiable {
     var id: Int {
         switch self {
         case .female:

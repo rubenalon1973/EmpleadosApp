@@ -14,7 +14,7 @@ final class EmpVM: ObservableObject {
     @Published var errorMessage = ""
     @Published var showError = false
     @Published var search = ""
-    @Published var department: [Departamento] = []
+    @Published var department: [Department] = []
     
     var filteredEmpleadosModel: [EmpModel] {
         empleados.filter { empleado in

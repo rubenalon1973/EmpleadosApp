@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8034A6A32A2A4047009404C0 /* EmpleadosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6A22A2A4047009404C0 /* EmpleadosAppApp.swift */; };
-		8034A6A52A2A4047009404C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6A42A2A4047009404C0 /* ContentView.swift */; };
+		8034A6A32A2A4047009404C0 /* EmployeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6A22A2A4047009404C0 /* EmployeeApp.swift */; };
+		8034A6A52A2A4047009404C0 /* ListViewEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6A42A2A4047009404C0 /* ListViewEmployee.swift */; };
 		8034A6A72A2A4047009404C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8034A6A62A2A4047009404C0 /* Assets.xcassets */; };
 		8034A6AA2A2A4047009404C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8034A6A92A2A4047009404C0 /* Preview Assets.xcassets */; };
 		8034A6B62A2A4130009404C0 /* EmpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6B52A2A4130009404C0 /* EmpModel.swift */; };
 		8034A6B82A2A4324009404C0 /* PersistenceEmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6B72A2A4324009404C0 /* PersistenceEmp.swift */; };
 		8034A6BB2A2A4F25009404C0 /* EmpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034A6BA2A2A4F25009404C0 /* EmpVM.swift */; };
-		80749BAD2A2BA7410046B9D2 /* EmpleadosTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 80749BAC2A2BA7410046B9D2 /* EmpleadosTest.json */; };
+		80749BAD2A2BA7410046B9D2 /* EmployeeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 80749BAC2A2BA7410046B9D2 /* EmployeeTest.json */; };
 		80749BAF2A2BA9250046B9D2 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BAE2A2BA9250046B9D2 /* Interface.swift */; };
 		80749BB12A2BBFE50046B9D2 /* TestPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */; };
-		80749BB72A2D0BF50046B9D2 /* AddEmpleadoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BB62A2D0BF50046B9D2 /* AddEmpleadoView.swift */; };
-		809D0B0F2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809D0B0E2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift */; };
+		80749BB72A2D0BF50046B9D2 /* AddEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80749BB62A2D0BF50046B9D2 /* AddEmployeeView.swift */; };
+		809D0B0F2A2DE8E8003EFC7D /* CellEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809D0B0E2A2DE8E8003EFC7D /* CellEmployeeView.swift */; };
 		80A19AF52A2F922300B297EB /* AddEmployeeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A19AF42A2F922300B297EB /* AddEmployeeVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8034A69F2A2A4047009404C0 /* EmpleadosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmpleadosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8034A6A22A2A4047009404C0 /* EmpleadosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadosAppApp.swift; sourceTree = "<group>"; };
-		8034A6A42A2A4047009404C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8034A6A22A2A4047009404C0 /* EmployeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeApp.swift; sourceTree = "<group>"; };
+		8034A6A42A2A4047009404C0 /* ListViewEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewEmployee.swift; sourceTree = "<group>"; };
 		8034A6A62A2A4047009404C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8034A6A92A2A4047009404C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8034A6B52A2A4130009404C0 /* EmpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpModel.swift; sourceTree = "<group>"; };
 		8034A6B72A2A4324009404C0 /* PersistenceEmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceEmp.swift; sourceTree = "<group>"; };
 		8034A6BA2A2A4F25009404C0 /* EmpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpVM.swift; sourceTree = "<group>"; };
-		80749BAC2A2BA7410046B9D2 /* EmpleadosTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmpleadosTest.json; sourceTree = "<group>"; };
+		80749BAC2A2BA7410046B9D2 /* EmployeeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmployeeTest.json; sourceTree = "<group>"; };
 		80749BAE2A2BA9250046B9D2 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPersistence.swift; sourceTree = "<group>"; };
-		80749BB62A2D0BF50046B9D2 /* AddEmpleadoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmpleadoView.swift; sourceTree = "<group>"; };
-		809D0B0E2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaEmpleadoView.swift; sourceTree = "<group>"; };
+		80749BB62A2D0BF50046B9D2 /* AddEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeView.swift; sourceTree = "<group>"; };
+		809D0B0E2A2DE8E8003EFC7D /* CellEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEmployeeView.swift; sourceTree = "<group>"; };
 		80A19AF42A2F922300B297EB /* AddEmployeeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				8034A6A92A2A4047009404C0 /* Preview Assets.xcassets */,
-				80749BAC2A2BA7410046B9D2 /* EmpleadosTest.json */,
+				80749BAC2A2BA7410046B9D2 /* EmployeeTest.json */,
 				80749BB02A2BBFE50046B9D2 /* TestPersistence.swift */,
 			);
 			path = "Preview Content";
@@ -110,7 +110,7 @@
 		8034A6B22A2A4094009404C0 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				8034A6A22A2A4047009404C0 /* EmpleadosAppApp.swift */,
+				8034A6A22A2A4047009404C0 /* EmployeeApp.swift */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -118,9 +118,9 @@
 		8034A6B32A2A40AA009404C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8034A6A42A2A4047009404C0 /* ContentView.swift */,
-				80749BB62A2D0BF50046B9D2 /* AddEmpleadoView.swift */,
-				809D0B0E2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift */,
+				8034A6A42A2A4047009404C0 /* ListViewEmployee.swift */,
+				80749BB62A2D0BF50046B9D2 /* AddEmployeeView.swift */,
+				809D0B0E2A2DE8E8003EFC7D /* CellEmployeeView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80749BAD2A2BA7410046B9D2 /* EmpleadosTest.json in Resources */,
+				80749BAD2A2BA7410046B9D2 /* EmployeeTest.json in Resources */,
 				8034A6AA2A2A4047009404C0 /* Preview Assets.xcassets in Resources */,
 				8034A6A72A2A4047009404C0 /* Assets.xcassets in Resources */,
 			);
@@ -214,14 +214,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				80749BB12A2BBFE50046B9D2 /* TestPersistence.swift in Sources */,
-				809D0B0F2A2DE8E8003EFC7D /* CeldaEmpleadoView.swift in Sources */,
+				809D0B0F2A2DE8E8003EFC7D /* CellEmployeeView.swift in Sources */,
 				8034A6B82A2A4324009404C0 /* PersistenceEmp.swift in Sources */,
 				8034A6B62A2A4130009404C0 /* EmpModel.swift in Sources */,
 				8034A6BB2A2A4F25009404C0 /* EmpVM.swift in Sources */,
-				80749BB72A2D0BF50046B9D2 /* AddEmpleadoView.swift in Sources */,
+				80749BB72A2D0BF50046B9D2 /* AddEmployeeView.swift in Sources */,
 				80A19AF52A2F922300B297EB /* AddEmployeeVM.swift in Sources */,
-				8034A6A52A2A4047009404C0 /* ContentView.swift in Sources */,
-				8034A6A32A2A4047009404C0 /* EmpleadosAppApp.swift in Sources */,
+				8034A6A52A2A4047009404C0 /* ListViewEmployee.swift in Sources */,
+				8034A6A32A2A4047009404C0 /* EmployeeApp.swift in Sources */,
 				80749BAF2A2BA9250046B9D2 /* Interface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
