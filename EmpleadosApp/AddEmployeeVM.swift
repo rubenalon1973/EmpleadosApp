@@ -9,8 +9,8 @@ import SwiftUI
 
 //para cambiar el foco de un text a otro
 enum AddEmployeeFields {
-    case firstName, lastName, userName, email
-//    func para tabular en los campos del enum
+    case firstName, lastName, userName, email, address, zipcode
+    //    func para tabular en los campos del enum en un orden
     mutating func next() { //es mutating pq el enum es com un struct y vamos a modif prop.
         switch self {
         case .firstName:
@@ -21,8 +21,13 @@ enum AddEmployeeFields {
             self = .email
         case .email:
             self = .firstName
+        case .address:
+            self = .address
+        case .zipcode:
+            self = .zipcode
         }
     }
+    //    func para tabular en los campos del enum en un orden inverso
     mutating func prev() { //es mutating pq el enum es com un struct y vamos a modif prop.
         switch self {
         case .firstName:
@@ -33,11 +38,14 @@ enum AddEmployeeFields {
             self = .lastName
         case .email:
             self = .userName
+        case .address:
+            self = .address
+        case .zipcode:
+            self = .zipcode
         }
     }
 }
-
-
+//lógica para la view de addEmployee
 final class AddEmployeeVM: ObservableObject {
     let persistence = PersistenceEmp.shared
     
@@ -45,23 +53,26 @@ final class AddEmployeeVM: ObservableObject {
     @Published var lastName = ""
     @Published var userName = ""
     @Published var email = ""
+    @Published var address = ""
+    @Published var zipcode = ""
     @Published var gender: NombreGenero = .female
     @Published var department: NombreDepartamento = .accounting
     
-    
-//    func postEmployee() {
-//        let newEmployee = EmpModel(id: 2000,
-//                                   firstName: firstName,
-//                                   username: userName,
-//                                   lastName: lastName,
-//                                   avatar: URL(string: "https://robohash.org/voluptatemvoluptatemnon.png")!,
-//                                   email: email,
-//                                   department: Departamento(id: department.hashValue, name: department),
-//                                   gender: Genero(id: gender.hashValue, gender: gender))
-//        Task {
-//            await persistence.postEmployee(empleado: newEmployee)
-//        }
-//    }
+//    fx para pasarle los datos (q se rellenan en la view de AddEmpleado por el usuario), a la persistance donde esta la fx post para hacer el decode a la API
+    func postEmployee() { 
+        let newEmployee = NewEmployee(username: userName,
+                                      firstName: firstName,
+                                      lastName: lastName,
+                                      email: email,
+                                      address: address,
+                                      avatar: "https://robohash.org/autconsequaturofficia.png",
+                                      zipcode: zipcode,
+                                      department: 2,
+                                      gender: 2)
+        Task { //para poder llamar a la fx al ser async
+            await persistence.postEmployee(empleado: newEmployee)
+        }
+    }
 }
 
 

@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-
+//vista para q el usuario rellene los campos con sus datos y el su vm actualice esta propia view
 struct AddEmpleadoView: View {
     @ObservedObject var vm = AddEmployeeVM()//puente a esta view
-    @FocusState var focusField: AddEmployeeFields? //enum VM
-    @State var name = ""
-    @Environment(\.dismiss) var dismiss
+    @FocusState var focusField: AddEmployeeFields? //enum VM para mover el foco
     
     var body: some View {
         Form {
             Section {
+                
                 VStack(alignment: .leading) {
                     Text("FirstName")
                         .font( .headline)
@@ -28,6 +27,7 @@ struct AddEmpleadoView: View {
                             focusField?.next()
                         }
                 }
+                
                 VStack(alignment: .leading) {
                     Text("UserName")
                         .font( .headline)
@@ -41,6 +41,7 @@ struct AddEmpleadoView: View {
                             focusField?.next()
                         }
                 }
+                
                 VStack(alignment: .leading) {
                     Text("LastName")
                         .font( .headline)
@@ -53,6 +54,7 @@ struct AddEmpleadoView: View {
                             focusField?.next()
                         }
                 }
+                
                 VStack(alignment: .leading) {
                     Text("Email")
                         .font( .headline)
@@ -61,6 +63,34 @@ struct AddEmpleadoView: View {
                         .textInputAutocapitalization( .never)
                         .keyboardType( .emailAddress)//teclado con temas de email
                         .focused($focusField, equals: .email)
+                        .submitLabel( .next)
+                        .onSubmit {
+                            focusField?.next()
+                        }
+                }
+                
+                VStack(alignment: .leading) {
+                    Text("Address")
+                        .font( .headline)
+                    TextField("Enter address", text: $vm.address)
+                        .textContentType( .username)
+                        .textInputAutocapitalization( .never)
+                        .keyboardType( .emailAddress)//teclado con temas de email
+                        .focused($focusField, equals: .address)
+                        .submitLabel( .next)
+                        .onSubmit {
+                            focusField?.next()
+                        }
+                }
+                
+                VStack(alignment: .leading) {
+                    Text("Zipcode")
+                        .font( .headline)
+                    TextField("Enter zipcode", text: $vm.zipcode)
+                        .textContentType( .username)
+                        .textInputAutocapitalization( .never)
+                        .keyboardType( .numberPad)//teclado con temas de zipcode
+                        .focused($focusField, equals: .zipcode)
                         .submitLabel( .next)
                         .onSubmit {
                             focusField?.next()
@@ -79,6 +109,7 @@ struct AddEmpleadoView: View {
                 } label: {
                     Text("Gender")
                 }
+                
                 Picker(selection: $vm.department) {
                     ForEach(NombreDepartamento.allCases) { department in
                         Text(department.rawValue)//también podemos poner una image, o un label con systemImage xej
@@ -87,19 +118,19 @@ struct AddEmpleadoView: View {
                 } label: {
                     Text("Department")
                 }
-                
+            }
+            .navigationTitle("New Employee")
+        }
+        .textFieldStyle(.roundedBorder)
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
                 Button {
-//                    $vm.postEmployee
+                    vm.postEmployee()
                 } label: {
                     Text("Save")
                 }
-                .buttonStyle( .borderedProminent)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .listRowBackground(Color.clear)
-                .padding()
 
             }
-            .navigationTitle("New Employee")
         }
     }
 }

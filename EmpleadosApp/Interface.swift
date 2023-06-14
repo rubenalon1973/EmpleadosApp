@@ -17,10 +17,12 @@ enum HTTPMethods: String {
 //añadir nuestras url dentro del sist. para llamarlas más fácil
 extension URL {
     static let getEmpleados = mainURL.appending(path: "getEmpleados")
+    static let postEmpleados = mainURL.appending(path: "empleado")
+    static let getDepartamentos = mainURL.appending(path: "getDepartamentos")
 }
 //request: es una solicitud de más detalles, URL es una simple llamada
 extension URLRequest {
-//    func para el get
+    
     static func get(url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethods.get.rawValue //accedes al enum para decirle el tipo, y así evitar los strings
@@ -29,14 +31,14 @@ extension URLRequest {
         return request
     }
     
-//    static func post<JSON: Codable>(url: URL, data: JSON) -> URLRequest {
-//        var request = URLRequest(url: url)
-//
-//        request.httpMethod = HTTPMethods.post.rawValue
-//        request.timeoutInterval = 30
-//        request.setValue("application/json; chartset=utf8", forHTTPHeaderField: "Content-Type")
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
-//        request.httpBody = try? JSONDecoder().encode(data)
-//        return request
-//    }
+    static func post<JSON: Codable>(url: URL, data: JSON) -> URLRequest { //data tiene q ser codable pq los json
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = HTTPMethods.post.rawValue
+        request.timeoutInterval = 30
+        request.setValue("application/json; chartset=utf8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpBody = try? JSONEncoder().encode(data) //Formato de transporte, un body, codificado
+        return request
+    }
 }

@@ -15,6 +15,7 @@ struct EmpModel: Codable, Identifiable {
     let lastName: String
     let avatar: URL
     let email: String
+    let address: String
     let department: Departamento
     let gender: Genero
     
@@ -22,6 +23,18 @@ struct EmpModel: Codable, Identifiable {
         "\(lastName), \(firstName)"
     }
     
+}
+
+struct NewEmployee: Codable {
+    let username: String
+    let firstName: String
+    let lastName: String
+    let email: String
+    let address: String
+    let avatar: String?
+    let zipcode: String?
+    let department: Int
+    let gender: Int
 }
 struct Departamento: Codable, Identifiable {
     let id: Int
@@ -50,7 +63,14 @@ struct Genero: Codable, Identifiable {
 }
 
 enum NombreGenero: String, Codable, CaseIterable, Identifiable {
-    var id: String{ UUID().uuidString }
+    var id: Int {
+        switch self {
+        case .female:
+            return 2
+        case .male:
+            return 1
+        }
+    }
     case female = "Female"
     case male = "Male"
 }

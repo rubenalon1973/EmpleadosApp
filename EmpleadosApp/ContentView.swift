@@ -11,6 +11,7 @@ struct ContentView: View {
     @ObservedObject var empleadosVm: EmpVM //se actualiza la view gracias al published del vm
     @State var showEmp = false
     
+    
     var body: some View {
         NavigationStack {
             List {
@@ -33,15 +34,10 @@ struct ContentView: View {
             .navigationTitle("Employees")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showEmp.toggle()
-                    } label: {
-                        Image(systemName: "plus") //símbolo +
-                    }
-                    .sheet(isPresented: $showEmp) { //despliega una modalView
-                        showEmp = false
-                    } content: {
+                    NavigationLink {
                         AddEmpleadoView()
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
             }
