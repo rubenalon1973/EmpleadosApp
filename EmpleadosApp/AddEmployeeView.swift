@@ -9,7 +9,8 @@ import SwiftUI
 //vista para q el usuario rellene los campos con sus datos y el su vm actualice esta propia view
 struct AddEmployeeView: View {
     @ObservedObject var vm = AddEmployeeVM()//puente a esta view
-    @FocusState var focusField: AddEmployeeFields? //enum VM para mover el foco
+    @FocusState var focusField: AddEmployeeFields?
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         Form {
@@ -111,27 +112,33 @@ struct AddEmployeeView: View {
                 }
                 
                 Picker(selection: $vm.department) {
-                    ForEach(DepartmentName.allCases) { department in
-                        Text(department.rawValue)//también podemos poner una image, o un label con systemImage xej
-                            .tag(department)
+                    ForEach(vm.departaments) { department in
+                        Text(department.name.rawValue)//también podemos poner una image, o un label con systemImage xej
+                            .tag(department.id)
                     }
                 } label: {
                     Text("Department")
                 }
             }
-            .navigationTitle("New Employee")
         }
         .textFieldStyle(.roundedBorder)
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button {
                     vm.postEmployee()
+                    if vm.dismissView {
+                        dismiss()
+                        vm.cleanFields()
+                    }
                 } label: {
                     Text("Save")
                 }
-
+                .alert(isPresented: $vm.showWrongFieldAlert) {
+                    Alert(title: Text("Empty field"), message: Text(vm.wrongFieldMessage))
+                }
             }
         }
+        .navigationTitle("New Employee")
     }
 }
 

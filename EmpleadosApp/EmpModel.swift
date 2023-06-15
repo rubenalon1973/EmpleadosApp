@@ -35,6 +35,10 @@ struct NewEmployee: Codable {
     let zipcode: String?
     let department: Int
     let gender: Int
+    
+    static var emptyEmpoyee: NewEmployee {
+        NewEmployee(username: "", firstName: "", lastName: "", email: "", address: "", avatar: "", zipcode: "", department: 1, gender: 1)
+    }
 }
 struct Department: Codable, Identifiable {
     let id: Int
