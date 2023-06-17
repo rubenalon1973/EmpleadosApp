@@ -9,10 +9,9 @@ import SwiftUI
 
 @main
 struct EmployeeApp: App {
-//    la view principal al arrancar la app
     var body: some Scene {
         WindowGroup {
-            listViewEmployee(employeeVm: EmpVM()) //por defecto coge el de producción
+            listViewEmployee(employeeVm: EmpVM())
                 .preferredColorScheme(.dark)
         }
     }

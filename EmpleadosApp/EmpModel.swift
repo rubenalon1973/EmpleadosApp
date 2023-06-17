@@ -22,7 +22,6 @@ struct EmpModel: Codable, Identifiable {
     var fullName: String {
         "\(lastName), \(firstName)"
     }
-    
 }
 
 struct NewEmployee: Codable {

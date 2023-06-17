@@ -7,9 +7,6 @@
 
 import Foundation
 
-//nada de esto va en la app, al arrancar ignora la preview content
-
-//Uniform resource locator URL, no se hace llamada a red, sino en local, creado por nosotros
 extension URL {
     static let empleadosTest = Bundle.main.url(forResource: "EmployeeTest", withExtension: "json")!
 }
@@ -17,8 +14,8 @@ extension URL {
 final class TestPersistence: NetworkPersistence {
     
     func fetchEmpleados() async throws -> [EmpModel] {
-        let data = try Data(contentsOf: .empleadosTest) //decodifica a bytes en data
-        return try JSONDecoder().decode([EmpModel].self, from: data) // va rellenando de data
+        let data = try Data(contentsOf: .empleadosTest)
+        return try JSONDecoder().decode([EmpModel].self, from: data)
     }
 }
 

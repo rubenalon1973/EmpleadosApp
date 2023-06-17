@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct listViewEmployee: View {
-    @ObservedObject var employeeVm: EmpVM //se actualiza la view gracias al published del vm
+    @ObservedObject var employeeVm: EmpVM
     @State var showEmp = false
-    
     
     var body: some View {
         NavigationStack {

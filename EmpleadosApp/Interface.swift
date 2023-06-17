@@ -7,38 +7,37 @@
 
 import Foundation
 
-//capa de configuración de llamadas de red, hay gente q lo mete todo en una clase lo de esta interface...reunido
-let mainURL = URL(string: "https://acacademy-employees-api.herokuapp.com/api")! //url base
+let mainURL = URL(string: "https://acacademy-employees-api.herokuapp.com/api")!
 
 enum HTTPMethods: String {
     case get = "GET"
     case post = "POST"
 }
-//añadir nuestras url dentro del sist. para llamarlas más fácil
+
 extension URL {
     static let getEmpleados = mainURL.appending(path: "getEmpleados")
     static let postEmpleados = mainURL.appending(path: "empleado")
     static let getDepartamentos = mainURL.appending(path: "getDepartamentos")
 }
-//request: es una solicitud de más detalles, URL es una simple llamada
+
 extension URLRequest {
     
     static func get(url: URL) -> URLRequest {
         var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethods.get.rawValue //accedes al enum para decirle el tipo, y así evitar los strings
-        request.timeoutInterval = 10 //tiempo de espera para la llamada
-        request.setValue("application/json", forHTTPHeaderField: "Accept") //para q solo aceptemos json del servidor
+        request.httpMethod = HTTPMethods.get.rawValue
+        request.timeoutInterval = 10
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         return request
     }
     
-    static func post<JSON: Codable>(url: URL, data: JSON) -> URLRequest { //data tiene q ser codable pq los json
+    static func post<JSON: Codable>(url: URL, data: JSON) -> URLRequest {
         var request = URLRequest(url: url)
         
         request.httpMethod = HTTPMethods.post.rawValue
         request.timeoutInterval = 30
         request.setValue("application/json; chartset=utf8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpBody = try? JSONEncoder().encode(data) //Formato de transporte, un body, codificado
+        request.httpBody = try? JSONEncoder().encode(data)
         return request
     }
 }

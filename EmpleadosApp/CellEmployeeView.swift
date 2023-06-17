@@ -37,13 +37,10 @@ struct CellEmployeeView: View {
     }
 }
 
-
-
 struct CellEmployeeView_Previews: PreviewProvider {
     static var previews: some View {
         CellEmployeeView(empleado: .testEmpleado)
             .padding() //para separarlo de la izq, en producción el list se encarga de ello
             .preferredColorScheme(.dark)
-        
     }
 }
